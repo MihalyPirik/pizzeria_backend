@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('foods')->get();
+        $categories = Category::all();
+        //$categories = Category::with('foods')->get();
         return response()->json($categories);
     }
 
@@ -46,7 +47,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
         $category->delete();
         return response()->json('', 204);
     }

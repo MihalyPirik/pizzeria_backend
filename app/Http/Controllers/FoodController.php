@@ -12,8 +12,8 @@ class FoodController extends Controller
      */
     public function index()
     {
-        //$foods = Food::all();
-        $foods = Food::with('category')->get();
+        $foods = Food::all();
+        //$foods = Food::with('category')->get();
         return response()->json($foods);
     }
 
@@ -50,7 +50,7 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        $food = Food::find($id);
+        $food = Food::findOrFail($id);
         $food->delete();
         return response()->json(['message' => 'Succes'], 204);
     }

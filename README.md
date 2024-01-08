@@ -21,7 +21,7 @@ php artisan migrate
 ### Database update and seed
 
 ```sh
-php artisan migrate
+php artisan migrate:fresh --seed
 ```
 
 ### Hot-Reload
