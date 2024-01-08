@@ -12,8 +12,8 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods = Food::all();
-        //$Foods = Food::with('category')->get();
+        //$foods = Food::all();
+        $foods = Food::with('category')->get();
         return response()->json($foods);
     }
 
@@ -29,8 +29,8 @@ class FoodController extends Controller
      * Display the specified resource.
      */
     public function show($id) {
-        //$Food = Food::with('category')->find($id);
-        $food = Food::find($id);
+        $food = Food::with('category')->find($id);
+        //$food = Food::find($id);
         if ($food == null) {
             return response()->json(['message' => 'No food found'], 404);
         }
@@ -48,8 +48,10 @@ class FoodController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Food $food)
+    public function destroy($id)
     {
-        //
+        $food = Food::find($id);
+        $food->delete();
+        return response()->json(['message' => 'Succes'], 204);
     }
 }

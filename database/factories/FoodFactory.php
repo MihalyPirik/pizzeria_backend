@@ -20,6 +20,7 @@ class FoodFactory extends Factory
             'name'=> fake()->sentence(3),
             'price'=> fake()->numberBetween(1000, 3000),
             'size'=> fake()->numberBetween(1, 3),
+            'category_id'=> fake()->numberBetween(1, 10),
         ];
     }
 }

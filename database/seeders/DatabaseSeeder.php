@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Category;
 use App\Models\Food;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-
+        $categories = Category::factory(10)->create();
         Food::factory(30)->create();
     }
 }

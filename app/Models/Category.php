@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Food extends Model
+class Category extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
-    public function category(): BelongsTo
+    public function foods(): HasMany
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Food::class);
     }
 }
