@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FoodController extends Controller
 {
@@ -53,5 +55,18 @@ class FoodController extends Controller
         $food = Food::findOrFail($id);
         $food->delete();
         return response()->json(['message' => 'Succes'], 204);
+    }
+
+    public function foodsByCategories(){
+        try {
+            $result = Food::select('categories.name as Category', DB::raw('COUNT(*) as foodCount'))
+            ->join('categories', 'categories.id', '=', 'Food.category_id')
+            ->groupBy('categories.name')
+            ->get();
+
+            return $result;
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 }
