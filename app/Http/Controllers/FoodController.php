@@ -59,9 +59,9 @@ class FoodController extends Controller
 
     public function foodsByCategories(){
         try {
-            $result = Food::select('categories.name as Category', DB::raw('COUNT(*) as foodCount'))
+            $result = Food::select('categories.id as CategoryId', 'categories.name as Category', DB::raw('COUNT(*) as foodCount'))
             ->join('categories', 'categories.id', '=', 'Food.category_id')
-            ->groupBy('categories.name')
+            ->groupBy('categories.id', 'categories.name')
             ->get();
 
             return $result;
