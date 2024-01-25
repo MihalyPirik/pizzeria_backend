@@ -1,0 +1,5 @@
+options -Indexes
+<Files .env>
+order allow,deny
+Deny from all
+</Files>
