@@ -18,6 +18,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name'=> fake()->word,
+            'img'=> fake()->imageUrl(600, 600, 'foods')
         ];
     }
 }

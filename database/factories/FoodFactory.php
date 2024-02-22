@@ -21,6 +21,7 @@ class FoodFactory extends Factory
             'price'=> fake()->numberBetween(1000, 3000),
             'size'=> fake()->numberBetween(1, 3),
             'category_id'=> fake()->numberBetween(1, 10),
+            'img'=> fake()->imageUrl(600, 600, 'foods')
         ];
     }
 }
