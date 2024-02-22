@@ -45,13 +45,26 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'phoneNumber' => $request->phoneNumber,
+            'address' => $request->address
         ]);
 
         $data = [
             'user' => $user,
-            'token' => $user->createToken('API token')->plainTextToken,
+            'token' => $user->createToken('API token')->plainTextToken
         ];
 
         return response()->json($data, 201);
+    }
+
+    public function checkEmail($email)
+    {
+        $user = User::where('email', $email)->first();
+        
+        if ($user) {
+            return response()->json(true, 200);
+        } else {
+            return response()->json(false, 200);
+        }
     }
 }

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "pj_pizzeria",
-    "dateExported": "2024-02-16T17:56:42.472Z",
+    "dateExported": "2024-02-22T13:59:15.356Z",
     "version": "1.1",
     "folders": [
         {
@@ -59,7 +59,7 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-16T16:23:49.235Z",
-            "modified": "2024-02-16T16:33:31.752Z",
+            "modified": "2024-02-22T13:03:14.348Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -73,7 +73,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Misi\",\n  \"email\": \"misipirik@gmail.com\",\n  \"password\": \"123456789\",\n  \"password_confirmation\": \"123456789\"\n}",
+                "raw": "{\n  \"name\": \"Misi\",\n  \"email\": \"misipirik5@gmail.com\",\n  \"password\": \"123456789\",\n  \"password_confirmation\": \"123456789\",\n  \"phoneNumber\": \"+36202439175\",\n  \"address\": \"asd\"\n}",
                 "form": []
             },
             "tests": []
@@ -87,7 +87,7 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-02-16T17:18:50.922Z",
-            "modified": "2024-02-16T17:53:58.260Z",
+            "modified": "2024-02-22T12:47:13.014Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -101,7 +101,7 @@
             "params": [],
             "auth": {
                 "type": "bearer",
-                "bearer": "8|f01RToRSyB5Astassr8OvOhFX6pYnM82in1LhPnA5c0c061c"
+                "bearer": "2|AnPUCc3ZkBZdmc6NsIrDaxO7qNZqFMdjMteRuDWBecabf4a8"
             },
             "tests": []
         },
@@ -215,7 +215,7 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-02-16T16:34:19.871Z",
-            "modified": "2024-02-16T17:37:05.572Z",
+            "modified": "2024-02-22T12:47:04.374Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -229,7 +229,7 @@
             "params": [],
             "auth": {
                 "type": "bearer",
-                "bearer": "5|2C6LPrqRrw3014O7Pl7xNPcSx7arJS4JOSLLu6Wj4197a7f1"
+                "bearer": "2|AnPUCc3ZkBZdmc6NsIrDaxO7qNZqFMdjMteRuDWBecabf4a8"
             },
             "tests": []
         },
@@ -304,6 +304,29 @@
                 "type": "bearer",
                 "bearer": "8|f01RToRSyB5Astassr8OvOhFX6pYnM82in1LhPnA5c0c061c"
             },
+            "tests": []
+        },
+        {
+            "_id": "dfeadc4a-8721-4235-b8c7-8b4a5228c2c8",
+            "colId": "0e344a24-38ff-4325-b970-61f70f556300",
+            "containerId": "e97c18be-b4f6-4920-b56a-792f44a879a8",
+            "name": "checkEmail",
+            "url": "http://127.0.0.1:8000/api/check-email/misipirik10@gmail.com",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-22T13:44:52.795Z",
+            "modified": "2024-02-22T13:58:51.812Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
             "tests": []
         },
         {

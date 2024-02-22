@@ -66,7 +66,7 @@ class FoodController extends Controller
 
             return $result;
         } catch (\Exception $e) {
-            return null;
+            return response()->json(['message' => 'Something went wrong'], 500);
         }
     }
 }

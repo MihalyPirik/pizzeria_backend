@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/check-email/{email}', [AuthController::class, 'checkEmail']);
 
 Route::get('foods', [FoodController::class, 'index']);
 Route::get('foods/{id}', [FoodController::class, 'show']);
