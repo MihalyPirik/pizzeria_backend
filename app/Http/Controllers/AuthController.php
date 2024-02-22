@@ -16,7 +16,7 @@ class AuthController extends Controller
         $request->validated();
 
         if (!Auth::attempt($request->only('email', 'password'))) {
-            return response()->json(["message" => "Invalid credentials"], 401);
+            return response()->json(['message' => 'Hibás email vagy jelszó!'], 401);
         }
 
         $user = User::where('email', $request->email)->first();
@@ -26,7 +26,9 @@ class AuthController extends Controller
             'token' => $user->createToken('API token')->plainTextToken,
         ];
 
-        return response()->json($data, 200);
+        if ($user) {
+            return response()->json($data, 200);
+        }
     }
 
     public function logout()
