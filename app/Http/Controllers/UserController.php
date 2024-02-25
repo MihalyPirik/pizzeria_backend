@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::where('id', Auth::user()->id)->get();
+        return response()->json($user);
     }
 
     /**
@@ -28,20 +30,7 @@ class UserController extends Controller
      */
     public function show()
     {
-        // if (!Auth::check()) {
-        //     return response()->json([
-        //         'success' => false,
-        //         'message' => 'Hitelesítés sikertelen'
-        //     ], 401);
-        // }
-
-        dd(Auth::user());
-        return response()->json(Auth::user(), 200);
-
-        // return response()->json([
-        //     'success' => true,
-        //     'user' => $user
-        // ]);
+        //
     }
 
     /**
