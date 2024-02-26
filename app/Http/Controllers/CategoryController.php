@@ -13,7 +13,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        //$categories = Category::with('foods')->get();
         return response()->json($categories);
     }
 

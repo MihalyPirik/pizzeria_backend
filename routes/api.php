@@ -36,5 +36,8 @@ Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::apiResource('/orders', OrderController::class);
-    Route::apiResource('/user', UserController::class);
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/user', [UserController::class, 'showUser']);
+    Route::put('/user', [UserController::class, 'update']);
+    Route::delete('/user', [UserController::class, 'destroy']);
 });

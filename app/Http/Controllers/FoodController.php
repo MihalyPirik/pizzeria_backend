@@ -14,7 +14,6 @@ class FoodController extends Controller
     public function index()
     {
         $foods = Food::all();
-        //$foods = Food::with('category')->get();
         return response()->json($foods);
     }
 
@@ -31,9 +30,8 @@ class FoodController extends Controller
      */
     public function show($id) {
         $food = Food::with('category')->find($id);
-        //$food = Food::find($id);
         if ($food == null) {
-            return response()->json(['message' => 'No food found'], 404);
+            return response()->json(['message' => 'Nem található ilyen étel!'], 404);
         }
         return response()->json($food);
     }

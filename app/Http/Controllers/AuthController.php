@@ -13,36 +13,31 @@ class AuthController extends Controller
 {
     public function login(LoginUserRequest $request)
     {
-        $request->validated();
+        $credentials = $request->only('email', 'password');
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            return response()->json(['message' => 'Hibás email vagy jelszó!'], 401);
+        if (Auth::attempt($credentials)) {
+            $user = $request->user();
+            $token = $user->createToken('API token')->plainTextToken;
+
+            return response()->json([
+                'user' => $user,
+                'token' => $token,
+            ], 200);
         }
 
-        $user = User::where('email', $request->email)->first();
-
-        $data = [
-            'user' => $user,
-            'token' => $user->createToken('API token')->plainTextToken,
-        ];
-
-        if ($user) {
-            return response()->json($data, 200);
-        }
+        return response()->json(['message' => 'Hibás email vagy jelszó!'], 401);
     }
+
 
     public function logout()
     {
         Auth::user()->tokens()->delete();
-        // Auth::user()->currentAccessToken()->delete();
 
-        return response()->json(["message" => "Logged out"], 200);
+        return response()->json(["message" => "Sikeres kijelentkezés"], 200);
     }
 
     public function register(StoreUserRequest $request)
     {
-        $request->validated();
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -51,18 +46,19 @@ class AuthController extends Controller
             'address' => $request->address
         ]);
 
-        $data = [
-            'user' => $user,
-            'token' => $user->createToken('API token')->plainTextToken
-        ];
+        $token = $user->createToken('API token')->plainTextToken;
 
-        return response()->json($data, 201);
+        return response()->json([
+            'user' => $user,
+            'token' => $token
+        ], 201);
     }
+
 
     public function checkEmail($email)
     {
         $user = User::where('email', $email)->first();
-        
+
         if ($user) {
             return response()->json(true, 200);
         } else {
