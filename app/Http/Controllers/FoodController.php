@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Food;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class FoodController extends Controller
 {
@@ -15,14 +16,6 @@ class FoodController extends Controller
     {
         $foods = Food::all();
         return response()->json($foods);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -37,21 +30,18 @@ class FoodController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Food $food)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy($id)
     {
         $food = Food::findOrFail($id);
-        $food->delete();
-        return response()->json(['message' => 'Succes'], 204);
+        
+        if (Gate::allows('delete', $food)) {
+            $food->delete();
+            return response()->json('', 204);
+        }
+
+        return response()->json(['message' => 'Nincs jogosultsága a törléshez'], 403);
     }
 
     public function foodsByCategories(){

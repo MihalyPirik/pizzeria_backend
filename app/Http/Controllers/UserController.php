@@ -26,11 +26,12 @@ class UserController extends Controller
      */
     public function showUser()
     {
-        $user = User::where('id', Auth::user()->id)->get();
+        $user = Auth::user();
 
         if (!$user) {
             return response()->json(['message' => 'Felhasználó nem található'], 404);
         }
+
         return response()->json($user);
     }
 
@@ -39,37 +40,41 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request)
     {
-        $user = User::where('id', Auth::user()->id)->first();
+        $user = User::find(Auth::user()->id);
 
         if (!$user) {
             return response()->json(['message' => 'Felhasználó nem található'], 404);
         }
 
-        $request->validated();
+        if ($request->has('password')) {
+            $user->password = Hash::make($request->password);
+        }
 
         $user->update($request->only(
             'name',
             'email',
-            'password',
             'phoneNumber',
             'address'
         ));
+
         return response()->json($user, 200);
     }
-
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy()
     {
-        $user = User::where('id', Auth::user()->id)->first();
+        $user = User::find(Auth::user()->id);
 
         if (!$user) {
             return response()->json(['message' => 'Felhasználó nem található'], 404);
         }
 
-        $user->delete();
-        return response()->json(['message' => 'Sikeresen törölve!'], 200);
+        if ($user->delete()) {
+            return response()->json(['message' => 'Sikeresen törölve!'], 200);
+        } else {
+            return response()->json(['message' => 'Nem sikerült törölni a felhasználót. Kérlek, próbáld újra később.'], 500);
+        }
     }
 }

@@ -26,12 +26,10 @@ Route::get('/check-email/{email}', [AuthController::class, 'checkEmail']);
 
 Route::get('foods', [FoodController::class, 'index']);
 Route::get('foods/{id}', [FoodController::class, 'show']);
-Route::delete('foods/{id}', [FoodController::class, 'destroy']);
 Route::get('foods-by-categories', [FoodController::class, 'foodsByCategories']);
 
 Route::get('categories', [CategoryController::class, 'index']);
 Route::get('categories/{id}', [CategoryController::class, 'show']);
-Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
@@ -40,4 +38,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/user', [UserController::class, 'showUser']);
     Route::put('/user', [UserController::class, 'update']);
     Route::delete('/user', [UserController::class, 'destroy']);
+    Route::delete('foods/{id}', [FoodController::class, 'destroy']);
+    Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
 });

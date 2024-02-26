@@ -24,14 +24,19 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        $request->validated();
         $order = Order::create([
-            'user_id' => Auth::user()->id,
+            'user_id' => Auth::user()->id, // Győződj meg róla, hogy a felhasználó be van jelentkezve
             'order' => $request->order,
         ]);
-
-        return response()->json($order, 201);
+    
+        // Az új rendelés adatainak visszaadása a válaszban
+        return response()->json([
+            'id' => $order->id,
+            'order' => $order->order,
+            'created_at' => $order->created_at,
+        ], 201);
     }
+    
 
     /**
      * Display the specified resource.
@@ -40,7 +45,11 @@ class OrderController extends Controller
     {
         $this->authorize('view', $order);
 
-        return response()->json($order);
+        return response()->json([
+            'id' => $order->id,
+            'order' => $order->order,
+            'created_at' => $order->created_at,
+        ], 200);
     }
 
     /**
@@ -51,12 +60,14 @@ class OrderController extends Controller
         if ($request->user()->cannot('update', $order)) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
-
-        $request->validated();
-
+        
         $order->update($request->only('order'));
-
-        return response()->json($order);
+        
+        return response()->json([
+            'id' => $order->id,
+            'order' => $order->order,
+            'created_at' => $order->created_at,
+        ], 200);
     }
 
     /**

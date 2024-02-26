@@ -41,11 +41,7 @@ class OrderPolicy
      */
     public function update(User $user, Order $order): bool
     {
-        if ($user->is_admin === 1) {
-            return true;
-        }
-
-        return false;
+        return $user->is_admin;
     }
 
     /**
@@ -53,10 +49,6 @@ class OrderPolicy
      */
     public function delete(User $user, Order $order): bool
     {
-        if ($user->is_admin === 1) {
-            return true;
-        }
-
-        return false;
+        return $user->is_admin;
     }
 }

@@ -19,15 +19,11 @@ class AuthController extends Controller
             $user = $request->user();
             $token = $user->createToken('API token')->plainTextToken;
 
-            return response()->json([
-                'user' => $user,
-                'token' => $token,
-            ], 200);
+            return response()->json(['token' => $token], 200);
         }
 
         return response()->json(['message' => 'Hibás email vagy jelszó!'], 401);
     }
-
 
     public function logout()
     {
@@ -49,20 +45,20 @@ class AuthController extends Controller
         $token = $user->createToken('API token')->plainTextToken;
 
         return response()->json([
-            'user' => $user,
+            'user_id' => $user->id,
+            'name' => $user->name,
             'token' => $token
         ], 201);
     }
-
 
     public function checkEmail($email)
     {
         $user = User::where('email', $email)->first();
 
         if ($user) {
-            return response()->json(true, 200);
+            return response()->json(['exists' => true], 200);
         } else {
-            return response()->json(false, 200);
+            return response()->json(['exists' => false], 200);
         }
     }
 }

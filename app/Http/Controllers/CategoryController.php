@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class CategoryController extends Controller
 {
@@ -17,14 +19,6 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show($id)
@@ -34,20 +28,17 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Category $category)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
-        $category->delete();
-        return response()->json('', 204);
+        
+        if (Gate::allows('delete', $category)) {
+            $category->delete();
+            return response()->json('', 204);
+        }
+
+        return response()->json(['message' => 'Nincs jogosultsága a törléshez'], 403);
     }
 }
