@@ -1,49 +1,49 @@
 {
     "client": "Thunder Client",
     "collectionName": "pj_pizzeria",
-    "dateExported": "2024-02-26T16:10:31.968Z",
+    "dateExported": "2024-02-27T07:06:01.478Z",
     "version": "1.1",
     "folders": [
         {
-            "_id": "12ae3410-b406-4811-bc89-bad8cf33a5d3",
+            "_id": "9db4f177-87ea-48c4-a728-74cfd088a447",
             "name": "auth",
             "containerId": "",
-            "created": "2024-02-26T14:58:25.000Z",
+            "created": "2024-02-27T06:48:28.255Z",
             "sortNum": 10000
         },
         {
-            "_id": "5742528d-da3d-427e-a8ce-b0c4bbb5a6e7",
+            "_id": "48fd21da-416b-4704-92df-a6090ab5c6d5",
             "name": "orders",
             "containerId": "",
-            "created": "2024-02-26T14:58:25.001Z",
+            "created": "2024-02-27T06:48:28.256Z",
             "sortNum": 20000
         },
         {
-            "_id": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "foods&categories",
             "containerId": "",
-            "created": "2024-02-26T14:58:25.002Z",
+            "created": "2024-02-27T06:48:28.257Z",
             "sortNum": 30000
         },
         {
-            "_id": "49f26118-c3d6-448f-98eb-9e2ec4228127",
+            "_id": "36e65430-98cf-4fce-b780-ae275f60ef1f",
             "name": "user",
             "containerId": "",
-            "created": "2024-02-26T14:58:25.003Z",
+            "created": "2024-02-27T06:48:28.259Z",
             "sortNum": 40000
         }
     ],
     "requests": [
         {
-            "_id": "386f885b-354b-4b2c-bac7-3ebf6879f97f",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "6a780a94-3dd6-4d21-b13d-2314ebcc272f",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "GetAllFoods",
             "url": "http://127.0.0.1:8000/api/foods",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-26T14:58:25.000Z",
-            "modified": "2024-02-26T14:58:25.000Z",
+            "created": "2024-02-27T06:48:28.256Z",
+            "modified": "2024-02-27T06:48:28.256Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -58,15 +58,15 @@
             "tests": []
         },
         {
-            "_id": "0618d7c1-4318-4160-9ed5-08c024458736",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "12ae3410-b406-4811-bc89-bad8cf33a5d3",
+            "_id": "67ec476a-8bfd-4413-be72-40a36292f4f6",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "9db4f177-87ea-48c4-a728-74cfd088a447",
             "name": "Register",
             "url": "http://127.0.0.1:8000/api/register",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-26T14:58:25.007Z",
-            "modified": "2024-02-26T15:24:51.275Z",
+            "created": "2024-02-27T06:48:28.263Z",
+            "modified": "2024-02-27T06:48:39.311Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -80,21 +80,21 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Misi\",\n  \"email\": \"misipirik101@gmail.com\",\n  \"password\": \"12345678\",\n  \"password_confirmation\": \"12345678\",\n  \"phoneNumber\": \"+36202439175\",\n  \"address\": \"asd\"\n}",
+                "raw": "{\n  \"name\": \"Misi\",\n  \"email\": \"misipirik@gmail.com\",\n  \"password\": \"12345678\",\n  \"password_confirmation\": \"12345678\",\n  \"phoneNumber\": \"+36202439175\",\n  \"address\": \"asd\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "7041372b-219a-4383-8a37-fc6e1468808a",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5742528d-da3d-427e-a8ce-b0c4bbb5a6e7",
+            "_id": "068b8bca-1aed-4cd2-a1f2-11b24e77205d",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "48fd21da-416b-4704-92df-a6090ab5c6d5",
             "name": "GetAllOrders",
             "url": "http://127.0.0.1:8000/api/orders",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-26T14:58:25.010Z",
-            "modified": "2024-02-26T15:29:43.043Z",
+            "created": "2024-02-27T06:48:28.266Z",
+            "modified": "2024-02-27T06:48:28.266Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -113,15 +113,15 @@
             "tests": []
         },
         {
-            "_id": "79018a44-d83f-4700-ae7c-a607ee64714c",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "49f26118-c3d6-448f-98eb-9e2ec4228127",
+            "_id": "b7b39730-35da-4952-8623-3fefa3043e28",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "36e65430-98cf-4fce-b780-ae275f60ef1f",
             "name": "GetUser",
             "url": "http://127.0.0.1:8000/api/user",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-26T14:58:25.016Z",
-            "modified": "2024-02-26T15:40:52.257Z",
+            "created": "2024-02-27T06:48:28.273Z",
+            "modified": "2024-02-27T06:48:54.874Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -135,20 +135,20 @@
             "params": [],
             "auth": {
                 "type": "bearer",
-                "bearer": "26|zo1gYahjTFOZtDaTFmqIkeg6TJVzqOBuv3KQTkJw02d74312"
+                "bearer": "2|UuF4swje1vIxn87hrCIdl8qerglFQUf1hjUk09Alb6c49253"
             },
             "tests": []
         },
         {
-            "_id": "760c7ebe-8f35-48e1-af11-3ff51f624304",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "49f26118-c3d6-448f-98eb-9e2ec4228127",
+            "_id": "0a6482c1-da3d-491a-bed6-98a691788367",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "36e65430-98cf-4fce-b780-ae275f60ef1f",
             "name": "GetUsers",
             "url": "http://127.0.0.1:8000/api/users",
             "method": "GET",
             "sortNum": 15000,
-            "created": "2024-02-26T14:58:25.018Z",
-            "modified": "2024-02-26T15:44:35.348Z",
+            "created": "2024-02-27T06:48:28.275Z",
+            "modified": "2024-02-27T06:48:28.275Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -167,15 +167,15 @@
             "tests": []
         },
         {
-            "_id": "7b5912c4-4ae8-4558-98d4-46ff5f3af5e7",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "1d62f858-efa8-47d7-bded-435ffbf26f04",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "GetAllCategory",
             "url": "http://127.0.0.1:8000/api/categories",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-26T14:58:25.002Z",
-            "modified": "2024-02-26T14:58:25.002Z",
+            "created": "2024-02-27T06:48:28.258Z",
+            "modified": "2024-02-27T06:48:28.258Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -190,15 +190,15 @@
             "tests": []
         },
         {
-            "_id": "e2c9e714-ae8d-400d-8109-9e801e207456",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "12ae3410-b406-4811-bc89-bad8cf33a5d3",
+            "_id": "91c52291-aaed-4cc6-88c1-56456cd2d28e",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "9db4f177-87ea-48c4-a728-74cfd088a447",
             "name": "Login",
             "url": "http://127.0.0.1:8000/api/login",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2024-02-26T14:58:25.008Z",
-            "modified": "2024-02-26T16:08:14.531Z",
+            "created": "2024-02-27T06:48:28.264Z",
+            "modified": "2024-02-27T06:48:28.264Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -218,15 +218,15 @@
             "tests": []
         },
         {
-            "_id": "96becd96-5eb2-4acc-999f-ad2cc9e721e2",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5742528d-da3d-427e-a8ce-b0c4bbb5a6e7",
+            "_id": "47a43725-dc03-414a-940a-83723ae5391a",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "48fd21da-416b-4704-92df-a6090ab5c6d5",
             "name": "search order",
             "url": "http://127.0.0.1:8000/api/orders/30",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-26T14:58:25.011Z",
-            "modified": "2024-02-26T15:35:05.652Z",
+            "created": "2024-02-27T06:48:28.267Z",
+            "modified": "2024-02-27T06:48:28.267Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -245,15 +245,15 @@
             "tests": []
         },
         {
-            "_id": "717ae309-8193-41ec-a1b4-c87704a79d79",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "49f26118-c3d6-448f-98eb-9e2ec4228127",
+            "_id": "c40369f3-044c-4a6b-967c-90e3a1579fb7",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "36e65430-98cf-4fce-b780-ae275f60ef1f",
             "name": "UpdateUser",
             "url": "http://127.0.0.1:8000/api/user",
             "method": "PUT",
             "sortNum": 20000,
-            "created": "2024-02-26T14:58:25.017Z",
-            "modified": "2024-02-26T15:50:13.503Z",
+            "created": "2024-02-27T06:48:28.274Z",
+            "modified": "2024-02-27T07:02:49.501Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -267,25 +267,25 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "  {\n    \"name\": \"Misi\",\n    \"email\": \"misipirik@gmail.com\",\n    \"phoneNumber\": \"+36202439175\",\n    \"address\": \"asd\"\n  }",
+                "raw": "  {\n    \"name\": \"Misi\",\n    \"email\": \"misipirik@gmail.com\",\n    \"phoneNumber\": \"+36202439175\",\n    \"address\": \"asd\",\n    \"password\": \"12345678\",\n    \"password_confirmation\": \"12345678\"\n  }",
                 "form": []
             },
             "auth": {
                 "type": "bearer",
-                "bearer": "28|khtbcZcm6em1Ak0eu5dpBJZ7nRQV6RMD7VFn9sVC4c7cad8d"
+                "bearer": "2|UuF4swje1vIxn87hrCIdl8qerglFQUf1hjUk09Alb6c49253"
             },
             "tests": []
         },
         {
-            "_id": "1f7c6474-8096-4e1e-89b9-e29fc35dca2e",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "6b700d34-49f4-4eb3-9351-44aea2e88f73",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "GetFoodById",
             "url": "http://127.0.0.1:8000/api/foods/1",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-26T14:58:25.001Z",
-            "modified": "2024-02-26T14:58:25.001Z",
+            "created": "2024-02-27T06:48:28.257Z",
+            "modified": "2024-02-27T06:48:28.257Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -300,15 +300,15 @@
             "tests": []
         },
         {
-            "_id": "b42d6fe5-596d-47c8-b318-a7bc6497301b",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "12ae3410-b406-4811-bc89-bad8cf33a5d3",
+            "_id": "9758742b-6f5f-448a-b46a-c62579db6ceb",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "9db4f177-87ea-48c4-a728-74cfd088a447",
             "name": "Logout",
             "url": "http://127.0.0.1:8000/api/logout",
             "method": "POST",
             "sortNum": 30000,
-            "created": "2024-02-26T14:58:25.009Z",
-            "modified": "2024-02-26T14:58:25.009Z",
+            "created": "2024-02-27T06:48:28.265Z",
+            "modified": "2024-02-27T06:48:28.265Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -327,15 +327,15 @@
             "tests": []
         },
         {
-            "_id": "43b4cc63-8a21-4f3f-ba53-d54cdfa60a20",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5742528d-da3d-427e-a8ce-b0c4bbb5a6e7",
+            "_id": "f34257a6-6c1f-4037-95ed-eb2e67956472",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "48fd21da-416b-4704-92df-a6090ab5c6d5",
             "name": "create order",
             "url": "http://127.0.0.1:8000/api/orders",
             "method": "POST",
             "sortNum": 30000,
-            "created": "2024-02-26T14:58:25.012Z",
-            "modified": "2024-02-26T15:30:22.213Z",
+            "created": "2024-02-27T06:48:28.268Z",
+            "modified": "2024-02-27T06:48:28.268Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -359,15 +359,15 @@
             "tests": []
         },
         {
-            "_id": "44a080b8-151d-4c12-8c25-79ef40b7672f",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "49f26118-c3d6-448f-98eb-9e2ec4228127",
+            "_id": "06bdb8f0-c1aa-4e7e-a0fd-93b37776fae3",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "36e65430-98cf-4fce-b780-ae275f60ef1f",
             "name": "DeleteUser",
             "url": "http://127.0.0.1:8000/api/user",
             "method": "DELETE",
             "sortNum": 30000,
-            "created": "2024-02-26T14:58:25.019Z",
-            "modified": "2024-02-26T15:49:30.598Z",
+            "created": "2024-02-27T06:48:28.276Z",
+            "modified": "2024-02-27T06:48:28.276Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -386,15 +386,15 @@
             "tests": []
         },
         {
-            "_id": "6d283fe3-276b-40f4-811e-83defbcfbfa8",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "69caa68b-8c51-49a6-86a6-387bdf9c52b2",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "Delete Food",
             "url": "http://127.0.0.1:8000/api/foods/2",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-02-26T14:58:25.004Z",
-            "modified": "2024-02-26T16:05:37.512Z",
+            "created": "2024-02-27T06:48:28.260Z",
+            "modified": "2024-02-27T06:48:28.260Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -404,15 +404,15 @@
             "tests": []
         },
         {
-            "_id": "3f25a96b-7bd0-4d1e-8e6a-94b85f53db41",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5742528d-da3d-427e-a8ce-b0c4bbb5a6e7",
+            "_id": "57007cda-9292-4693-acd5-ed3cd60aec68",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "48fd21da-416b-4704-92df-a6090ab5c6d5",
             "name": "delete order",
             "url": "http://127.0.0.1:8000/api/orders/31",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-02-26T14:58:25.013Z",
-            "modified": "2024-02-26T15:40:24.075Z",
+            "created": "2024-02-27T06:48:28.269Z",
+            "modified": "2024-02-27T06:48:28.269Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -431,15 +431,15 @@
             "tests": []
         },
         {
-            "_id": "40d2c653-510c-4dd8-8637-3c10445afd2b",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "12ae3410-b406-4811-bc89-bad8cf33a5d3",
+            "_id": "7876e28d-d242-4089-a44b-03dc9ab73d0f",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "9db4f177-87ea-48c4-a728-74cfd088a447",
             "name": "checkEmail",
             "url": "http://127.0.0.1:8000/api/check-email/misipirik10@gmail.com",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2024-02-26T14:58:25.015Z",
-            "modified": "2024-02-26T15:26:58.239Z",
+            "created": "2024-02-27T06:48:28.271Z",
+            "modified": "2024-02-27T06:48:28.271Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -454,15 +454,15 @@
             "tests": []
         },
         {
-            "_id": "d5f45b75-e2bf-4125-adbc-6c794128845f",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "6a76d171-edd5-45d6-908f-9fd65d333da9",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "Delete Category",
             "url": "http://127.0.0.1:8000/api/categories/1",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-02-26T14:58:25.005Z",
-            "modified": "2024-02-26T16:08:30.361Z",
+            "created": "2024-02-27T06:48:28.261Z",
+            "modified": "2024-02-27T06:48:28.261Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -481,15 +481,15 @@
             "tests": []
         },
         {
-            "_id": "0a366636-f380-47fb-8e3c-427731000195",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5742528d-da3d-427e-a8ce-b0c4bbb5a6e7",
+            "_id": "2d9af6da-530b-44ec-aaa5-7644c6b3db44",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "48fd21da-416b-4704-92df-a6090ab5c6d5",
             "name": "update order",
             "url": "http://127.0.0.1:8000/api/orders/31",
             "method": "PATCH",
             "sortNum": 50000,
-            "created": "2024-02-26T14:58:25.014Z",
-            "modified": "2024-02-26T15:38:21.766Z",
+            "created": "2024-02-27T06:48:28.270Z",
+            "modified": "2024-02-27T06:48:28.270Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -513,15 +513,15 @@
             "tests": []
         },
         {
-            "_id": "f235a3d5-96be-4021-b9da-ba49d06b25d4",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "236d3b67-bab8-4c5c-af49-0f41dfea3335",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "GetCategoryById",
             "url": "http://127.0.0.1:8000/api/categories/1",
             "method": "GET",
             "sortNum": 60000,
-            "created": "2024-02-26T14:58:25.003Z",
-            "modified": "2024-02-26T14:58:25.003Z",
+            "created": "2024-02-27T06:48:28.259Z",
+            "modified": "2024-02-27T06:48:28.259Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -536,15 +536,15 @@
             "tests": []
         },
         {
-            "_id": "c5abcc79-a242-42d7-8a6d-c636b0368a66",
-            "colId": "1d09bed1-fb8c-49ef-b5b1-ed5da0a78b26",
-            "containerId": "5613112e-2b06-4925-b7d8-216965522592",
+            "_id": "fe1cba36-3db7-49f6-9b83-cdb02fdcd2e5",
+            "colId": "206a567f-e3f2-4eb4-9077-bee12522eefa",
+            "containerId": "deb47d2f-be74-4961-9350-935d6fce5fe7",
             "name": "GetFoodsByCategories",
             "url": "http://127.0.0.1:8000/api/foods-by-categories",
             "method": "GET",
             "sortNum": 70000,
-            "created": "2024-02-26T14:58:25.006Z",
-            "modified": "2024-02-26T14:58:25.006Z",
+            "created": "2024-02-27T06:48:28.262Z",
+            "modified": "2024-02-27T06:48:28.262Z",
             "headers": [
                 {
                     "name": "Accept",
