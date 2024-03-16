@@ -16,7 +16,13 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::where('user_id', Auth::user()->id)->get();
-        return response()->json($orders);
+
+        $decodedOrders = $orders->map(function ($order) {
+            $order->order = json_decode($order->order);
+            return $order;
+        });
+
+        return response()->json($decodedOrders);
     }
 
     /**
@@ -25,18 +31,16 @@ class OrderController extends Controller
     public function store(StoreOrderRequest $request)
     {
         $order = Order::create([
-            'user_id' => Auth::user()->id, // Győződj meg róla, hogy a felhasználó be van jelentkezve
-            'order' => $request->order,
+            'user_id' => Auth::user()->id,
+            'order' => json_encode($request->order),
         ]);
-    
-        // Az új rendelés adatainak visszaadása a válaszban
+
         return response()->json([
             'id' => $order->id,
-            'order' => $order->order,
+            'order' => json_decode($order->order),
             'created_at' => $order->created_at,
         ], 201);
     }
-    
 
     /**
      * Display the specified resource.
@@ -45,12 +49,15 @@ class OrderController extends Controller
     {
         $this->authorize('view', $order);
 
+        $order->order = json_decode($order->order);
+
         return response()->json([
             'id' => $order->id,
             'order' => $order->order,
             'created_at' => $order->created_at,
         ], 200);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -60,15 +67,20 @@ class OrderController extends Controller
         if ($request->user()->cannot('update', $order)) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
-        
-        $order->update($request->only('order'));
-        
+
+        $order->update([
+            'order' => json_encode($request->order)
+        ]);
+
+        $updatedOrder = Order::findOrFail($order->id);
+
         return response()->json([
-            'id' => $order->id,
-            'order' => $order->order,
-            'created_at' => $order->created_at,
+            'id' => $updatedOrder->id,
+            'order' => json_decode($updatedOrder->order),
+            'created_at' => $updatedOrder->created_at,
         ], 200);
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -18,7 +18,7 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'order' => $this->faker->sentence(3),
+            'order' => $this->faker->text(5),
             'user_id' => User::all()->random()->id
         ];
     }
