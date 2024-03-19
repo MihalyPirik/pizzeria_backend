@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "pj_pizzeria",
-    "dateExported": "2024-03-16T15:32:05.294Z",
+    "dateExported": "2024-03-19T18:19:24.295Z",
     "version": "1.1",
     "folders": [
         {
@@ -95,7 +95,7 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-02-27T13:57:27.507Z",
-            "modified": "2024-03-16T15:27:58.980Z",
+            "modified": "2024-03-17T11:53:45.684Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -110,7 +110,7 @@
             "reqType": "get",
             "auth": {
                 "type": "bearer",
-                "bearer": "9|bMLwBn51YcyhORSVvHQCV4ZAmYPQOwJY3hiJVo3n3a9f9f65"
+                "bearer": "11|BI74bMrcn6lKiYxdBeSxvwi6WSpIRE8wNvRlYuDwb0ec396b"
             },
             "tests": []
         },
@@ -225,11 +225,11 @@
             "colId": "7193347b-9007-413c-a582-3a1777e72e34",
             "containerId": "e8b6fd7d-e8cd-40f0-aea8-c6c953c01aef",
             "name": "search order",
-            "url": "http://127.0.0.1:8000/api/orders/31",
+            "url": "http://127.0.0.1:8000/api/orders/39",
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-02-27T13:57:27.508Z",
-            "modified": "2024-03-16T11:35:47.726Z",
+            "modified": "2024-03-19T17:42:20.468Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -244,7 +244,7 @@
             "reqType": "get",
             "auth": {
                 "type": "bearer",
-                "bearer": "2|m1NJFeUuYkyZzUQdRxvHfmh5iMND8742p0MfZLnz8e34f8fc"
+                "bearer": "5|Pw6zGbOBB0GZvucVscPkjG4Ca5cB4LyFLpPl3Q2Scf7226de"
             },
             "tests": []
         },
@@ -339,7 +339,7 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-02-27T13:57:27.509Z",
-            "modified": "2024-03-16T15:29:54.949Z",
+            "modified": "2024-03-17T14:15:50.265Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -353,7 +353,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"order\": [\n    [\"2\", \"pizza\", \"4000\", \"8000\"],\n    [\"2\", \"tök\", \"6000\", \"12000\"],\n    [\"3\", \"sajt\", \"2000\", \"6000\"],\n    [\"4\", \"burger\", \"2000\", \"8000\"]\n    ]\n}",
+                "raw": "{\n   \"order\": [{\n        \"quantity\": \"1\",\n        \"name\": \"Commodi enim similique.\",\n        \"price\": 1105,\n        \"allPrice\": 1105\n  }]\n}",
                 "form": []
             },
             "reqType": "post",
@@ -490,11 +490,11 @@
             "colId": "7193347b-9007-413c-a582-3a1777e72e34",
             "containerId": "e8b6fd7d-e8cd-40f0-aea8-c6c953c01aef",
             "name": "update order",
-            "url": "http://127.0.0.1:8000/api/orders/31",
+            "url": "http://127.0.0.1:8000/api/orders/40",
             "method": "PUT",
             "sortNum": 50000,
             "created": "2024-02-27T13:57:27.511Z",
-            "modified": "2024-03-16T15:26:07.725Z",
+            "modified": "2024-03-19T18:18:36.776Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -508,13 +508,13 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"order\": [\n    [\"2\", \"pizza\", \"8000\", \"4000\"],\n    [\"2\", \"tök\", \"6000\", \"12000\"],\n    [\"3\", \"sajt\", \"2000\", \"6000\"],\n    [\"4\", \"burger\", \"8000\", \"4000\"]\n    ]\n}",
+                "raw": "{\n  \"order\": [{\n        \"quantity\": \"2\",\n        \"name\": \"Commodi enim similique.\",\n        \"price\": 1105,\n        \"allPrice\": 1105\n  },\n  {\n        \"quantity\": \"1\",\n        \"name\": \"Commodi enim similique.\",\n        \"price\": 1105,\n        \"allPrice\": 1105\n  },\n  {\n        \"quantity\": \"1\",\n        \"name\": \"Commodi enim similique.\",\n        \"price\": 1105,\n        \"allPrice\": 1105\n  },\n  {\n        \"quantity\": \"1\",\n        \"name\": \"Commodi enim similique.\",\n        \"price\": 1105,\n        \"allPrice\": 1105\n  }]\n}",
                 "form": []
             },
             "reqType": "put",
             "auth": {
                 "type": "bearer",
-                "bearer": "7|WgJdS0ts6vHvr6KWXJZ3YY9eNmwsxf4DUC8WUVyk1a6a1415"
+                "bearer": "6|oyUYKeLW0BKwJmN2FAPYR8dPg100kaExu5Gon0x0e9db1d8b"
             },
             "tests": []
         },

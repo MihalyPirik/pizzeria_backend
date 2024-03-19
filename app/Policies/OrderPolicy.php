@@ -41,7 +41,7 @@ class OrderPolicy
      */
     public function update(User $user, Order $order): bool
     {
-        return $user->is_admin;
+        return true;
     }
 
     /**

@@ -22,7 +22,7 @@ class UpdateOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'order' => 'max:255'
+            'order' => 'max:1000'
         ];
     }
 }
