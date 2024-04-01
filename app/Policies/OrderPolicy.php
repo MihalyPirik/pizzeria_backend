@@ -41,7 +41,7 @@ class OrderPolicy
      */
     public function update(User $user, Order $order): bool
     {
-        return true;
+        return $user->id === $order->user_id;
     }
 
     /**
@@ -49,6 +49,6 @@ class OrderPolicy
      */
     public function delete(User $user, Order $order): bool
     {
-        return $user->is_admin;
+        return $user->id === $order->user_id;
     }
 }
